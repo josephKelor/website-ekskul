@@ -1,0 +1,593 @@
+/* ==================== ROOT & BASE STYLE ==================== */
+:root {
+    --bg-primary: #0f172a;       /* Dark theme background */
+    --bg-secondary: #1e293b;     /* Card background */
+    --accent: #38bdf8;           /* Cyber blue accent */
+    --accent-hover: #0ea5e9;
+    --text-main: #f8fafc;
+    --text-muted: #94a3b8;
+    --font-heading: 'Space Grotesk', sans-serif;
+    --font-body: 'Plus Jakarta Sans', sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    line-height: 1.6;
+}
+
+/* ==================== NAVIGATION BAR ==================== */
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 5%;
+    background: rgba(15, 23, 42, 0.8);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1000;
+}
+
+.logo {
+    font-family: var(--font-heading);
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    letter-spacing: 1px;
+}
+
+nav a {
+    color: var(--text-main);
+    text-decoration: none;
+    margin-left: 2rem;
+    font-weight: 600;
+    font-size: 0.95rem;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: var(--accent);
+}
+
+/* ==================== HERO SECTION ==================== */
+.hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 0 1rem;
+    background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.1), transparent 40%);
+}
+
+.hero h1 {
+    font-family: var(--font-heading);
+    font-size: 3.5rem;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+}
+
+.hero .highlight {
+    color: var(--accent);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    color: var(--text-muted);
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2.5rem;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    text-decoration: none;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 14px rgba(56, 189, 248, 0.3);
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(56, 189, 248, 0.4);
+}
+
+/* ==================== CONTENT SECTIONS ==================== */
+.content-section {
+    padding: 7rem 10% 5rem 10%;
+    text-align: center;
+}
+
+.grey-bg {
+    background-color: #111827; 
+}
+
+.content-section h2 {
+    font-family: var(--font-heading);
+    font-size: 2.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.section-desc {
+    color: var(--text-muted);
+    max-width: 600px;
+    margin: 0 auto 3rem auto;
+}
+
+#about p {
+    max-width: 800px;
+    margin: 2rem auto 0 auto;
+    font-size: 1.1rem;
+    color: #cbd5e1;
+}
+
+/* ==================== GRID & CARDS SYSTEM ==================== */
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 1rem;
+}
+
+.card {
+    background-color: var(--bg-secondary);
+    padding: 2.5rem 2rem;
+    border-radius: 12px;
+    text-align: left;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.card-icon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.card h3 {
+    margin-bottom: 0.8rem;
+    font-family: var(--font-heading);
+}
+
+.card p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
+
+/* ==================== MEMBERS GRID ==================== */
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1.5rem;
+}
+
+.card-member-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.card-member {
+    background-color: var(--bg-secondary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border-left: 4px solid var(--text-muted);
+    cursor: pointer;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.card-member:hover {
+    background-color: #243147;
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.1);
+}
+
+.member-img {
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin-bottom: 1rem;
+    overflow: hidden;
+    border: 2px solid var(--accent);
+    background-color: #2a3547;
+}
+
+.member-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.card-member h3 {
+    font-size: 1.05rem;
+    margin-bottom: 0.4rem;
+}
+
+.card-member .role {
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+/* Border khusus pengurus inti & pembina */
+.card-member.leader {
+    border-left-color: var(--accent);
+    background: linear-gradient(145deg, #1e293b, #151f32);
+}
+
+.card-member.teacher {
+    border-left-color: #fbbf24; 
+    background: linear-gradient(145deg, #1e293b, #242415);
+}
+
+.card-member.teacher .role {
+    color: #fbbf24;
+}
+
+/* ==================== FUNFACT BOX ==================== */
+.funfact-box {
+    background: linear-gradient(180deg, var(--bg-secondary), transparent);
+    padding: 2rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+.funfact-box h3 {
+    font-size: 2.5rem;
+    color: rgba(56, 189, 248, 0.2);
+    font-family: var(--font-heading);
+    margin-bottom: 0.5rem;
+}
+
+/* ==================== FOOTER ==================== */
+footer {
+    padding: 2.5rem 1rem;
+    text-align: center;
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* ==================== RESPONSIVE DESIGN ==================== */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        gap: 1rem;
+        padding: 1rem;
+    }
+    
+    nav a {
+        margin: 0 0.7rem;
+    }
+
+    .hero h1 {
+        font-size: 2.3rem;
+    }
+
+    .content-section {
+        padding: 5rem 5% 3rem 5%;
+    }
+}
+
+/* ==================== MINI GAME STYLE ==================== */
+.game-box {
+    background-color: var(--bg-secondary);
+    max-width: 500px;
+    margin: 2rem auto 0 auto;
+    padding: 2.5rem;
+    border-radius: 16px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+.game-hint {
+    margin-bottom: 1.5rem;
+    color: #cbd5e1;
+}
+
+.game-input-group {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+}
+
+#guessInput {
+    width: 100px;
+    padding: 0.8rem;
+    font-size: 1.2rem;
+    border-radius: 8px;
+    border: 2px solid #475569;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    text-align: center;
+    font-family: var(--font-heading);
+}
+
+#guessInput:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.btn-game {
+    padding: 0.8rem 1.5rem;
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    border: none;
+    font-weight: 700;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-game:hover {
+    background-color: var(--accent-hover);
+    transform: translateY(-2px);
+}
+
+.btn-reset {
+    background-color: #10b981; /* Warna hijau sukses */
+    color: white;
+    margin-top: 1rem;
+}
+
+.btn-reset:hover {
+    background-color: #059669;
+}
+
+.game-message {
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #cbd5e1;
+    min-height: 2rem;
+}
+
+/* ==================== ADDITIONAL STYLE FOR GAME LINK ==================== */
+html {
+    scroll-behavior: smooth; /* Memastikan efek scroll ke game terasa mulus */
+}
+
+.card-link {
+    text-decoration: none;
+    color: inherit; /* Supaya teks di dalam card tidak berubah jadi warna biru link */
+    display: block;
+}
+
+/* Membuat efek hover yang sinkron ketika card game dibungkus link */
+.card-link:hover .card {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.6); /* Mengikuti warna cyber blue accent milikmu */
+    box-shadow: 0 5px 15px rgba(56, 189, 248, 0.1);
+    cursor: pointer;
+}
+
+/* ==================== TYPING GAME SPECIFIC STYLE ==================== */
+#typeInput {
+    width: 100%;               /* Membuat input fleksibel memenuhi ruang */
+    max-width: 220px;          /* Batas lebar maksimal input */
+    padding: 0.8rem;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    border: 2px solid #475569;
+    background-color: var(--bg-primary);
+    color: var(--text-main);
+    font-family: var(--font-body);
+    text-align: center;
+    transition: border-color 0.3s ease;
+}
+
+#typeInput:focus {
+    outline: none;
+    border-color: var(--accent); /* Warna cyber blue saat diketik */
+}
+
+#typeInput:disabled {
+    background-color: #1e293b;
+    color: var(--text-muted);
+    border-color: #334155;
+    cursor: not-allowed;        /* Mengubah kursor menjadi tanda dilarang saat game belum mulai */
+}
+
+/* Memastikan susunan input dan tombol tetap rapi di tengah */
+#game-typing .game-input-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    min-height: 50px;          /* Menjaga ruang tetap konsisten saat tombol hilang */
+}
+
+/* ==================== PLAYLIST RADIO SYSTEM ==================== */
+.playlist-container {
+    max-width: 600px;
+    margin: 2rem auto 0 auto;
+    background-color: var(--bg-secondary);
+    padding: 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(56, 189, 248, 0.2);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+}
+
+.audio-player {
+    background-color: var(--bg-primary);
+    padding: 1.5rem;
+    border-radius: 12px;
+    margin-bottom: 1.5rem;
+    border-left: 4px solid var(--accent);
+}
+
+.song-list {
+    max-height: 250px; /* Batasi tinggi agar bisa di-scroll */
+    overflow-y: auto;  /* Aktifkan scrollbar vertikal */
+    text-align: left;
+    padding-right: 5px;
+}
+
+/* Mengubah tampilan scrollbar agar estetik */
+.song-list::-webkit-scrollbar {
+    width: 6px;
+}
+.song-list::-webkit-scrollbar-thumb {
+    background-color: #334155;
+    border-radius: 4px;
+}
+
+.song-item {
+    padding: 10px 15px;
+    background-color: rgba(255, 255, 255, 0.02);
+    margin-bottom: 8px;
+    border-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    font-size: 0.95rem;
+}
+
+.song-item:hover {
+    background-color: rgba(56, 189, 248, 0.1);
+    color: var(--accent);
+}
+
+.song-item.active {
+    background-color: rgba(56, 189, 248, 0.2);
+    color: var(--accent);
+    font-weight: bold;
+}
+
+/* ==================== RESOURCE / BAHAN BELAJAR SYSTEM ==================== */
+.resource-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    max-width: 900px;
+    margin: 2rem auto 0 auto;
+}
+
+.resource-card {
+    background-color: var(--bg-secondary);
+    padding: 2rem 1.5rem;
+    border-radius: 12px;
+    text-align: center;
+    border: 1px solid rgba(255, 255, 255, 0.03);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.resource-card:hover {
+    transform: translateY(-5px);
+    border-color: rgba(56, 189, 248, 0.3);
+}
+
+.resource-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.resource-card h4 {
+    font-family: var(--font-heading);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-main);
+}
+
+.resource-card p {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+    margin-bottom: 1.5rem;
+}
+
+.btn-download {
+    display: inline-block;
+    padding: 0.6rem 1.5rem;
+    background-color: transparent;
+    color: var(--accent);
+    border: 2px solid var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+    width: 100%;
+}
+
+.btn-download:hover {
+    background-color: var(--accent);
+    color: var(--bg-primary);
+    box-shadow: 0 4px 12px rgba(56, 189, 248, 0.2);
+}
+
+/* Memastikan setiap section utama mengambil baris penuh secara vertikal */
+.content-section {
+    width: 100%;
+    clear: both; /* Memutus efek elemen mengambang jika ada */
+    display: block; /* Memastikan section menumpuk ke bawah, bukan ke samping */
+}
+
+/* Memastikan kotak game tetap di tengah dan tidak melebar liar */
+.game-box {
+    display: block;
+    margin: 2rem auto 0 auto !important; /* !important memaksa element tetap di tengah */
+}
+
+/* Memastikan container playlist tetap di tengah */
+.playlist-container {
+    display: block;
+    margin: 2rem auto 0 auto !important;
+}
+
+/* ==================== DESKTOP FIX ALIGNMENT ==================== */
+
+/* Memaksa setiap section mengambil 1 baris utuh dari kiri ke kanan (menumpuk ke bawah) */
+#game-section, #game-typing, #playlist-section, #belajar-section {
+    display: block !important;
+    width: 100% !important;
+    clear: both !important;
+    float: none !important;
+}
+
+/* Memastikan elemen box tunggal tetap berada di tengah barisnya dan tidak melebar liar */
+.game-box, .playlist-container {
+    display: block !important;
+    width: 100% !important;
+    max-width: 500px !important; 
+    margin: 2rem auto 0 auto !important;
+}
+
+/* Khusus Pusat Bahan Belajar, kita biarkan berjejer 3 kolom karena isinya ada 3 kartu kecil */
+#belajar-section .resource-grid {
+    display: grid !important;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)) !important;
+    gap: 2rem !important;
+    max-width: 1000px !important;
+    margin: 2rem auto 0 auto !important;
+}
